@@ -1,0 +1,74 @@
+/*-- Styles pour l'animation --*/
+
+/* Styles de la card */
+.card {
+    position: relative;
+    overflow-y: hidden;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06))
+        drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+
+    /* Animation en hover du content */
+    &:hover {
+        .card__content {
+            transform: translateY(0);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+}
+
+/* Styles du media */
+.card__media {
+    div {
+        border-radius: 10px;
+        width: 100%;
+        background-color: gray;
+    }
+}
+
+/* Styles du content */
+.card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background: var(--color-background-tertiary);
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    padding: 14% var(--spacing-lg);
+    overflow: hidden;
+    transform: translateY(400px);
+    transition: transform 0.3s ease-out;
+
+    h2,
+    p {
+        color: var(--color-background-secondary);
+    }
+
+    h2 {
+        margin-top: -75px;
+        transition: all 0.3s ease-out;
+        font-size: 2rem;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+    .button {
+        margin-top: var(--spacing-sm);
+        text-align: center;
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+/* Styles des cards */
+.cards {
+    margin-bottom: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
